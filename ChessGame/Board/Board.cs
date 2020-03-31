@@ -15,8 +15,8 @@ namespace ChessGame.Board
 
         public Board(int rows = Globals.DefaultRows, int cols = Globals.DefaultCols)
         {
-            this.TotalRows = rows;
-            this.TotalCols = cols;
+            TotalRows = rows;
+            TotalCols = cols;
             this.board = new IFigure[rows, cols];
         }
         private int GetArrayRow(int row)
