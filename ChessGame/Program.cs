@@ -1,12 +1,14 @@
-﻿using System;
+﻿using ChessGame.Renderers;
+using System;
 
 namespace ChessGame
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            IRenderer renderer = new ConsoleRenderer();
+            renderer.RenderMainMenu();
         }
     }
 }
