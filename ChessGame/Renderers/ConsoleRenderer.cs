@@ -1,7 +1,9 @@
 ﻿using ChessGame.Board;
+using ChessGame.Common.ConsoleHelpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace ChessGame.Renderers
 {
@@ -15,10 +17,9 @@ namespace ChessGame.Renderers
 
         public void RenderMainMenu()
         {
-            int centerRow = Console.WindowHeight / 2;
-            int centerCol = Console.WindowWidth / 2;
-            Console.SetCursorPosition(centerRow, centerCol);
+            ConsoleHelpers.SetCursorAtCenter();
             Console.WriteLine(Logo);
+            Thread.Sleep(1000);
         }
     }
 }

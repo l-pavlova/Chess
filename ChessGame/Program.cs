@@ -9,6 +9,8 @@ namespace ChessGame
         {
             IRenderer renderer = new ConsoleRenderer();
             renderer.RenderMainMenu();
+            Console.ReadLine();
+            
         }
     }
 }
