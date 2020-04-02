@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ChessGame.Board
 {
-    public class Board
+    public class Board :IBoard
     {
         private readonly IFigure[,] board;
 

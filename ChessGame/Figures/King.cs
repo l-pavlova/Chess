@@ -6,12 +6,11 @@ using System.Text;
 
 namespace ChessGame.Figures
 {
-    public class Pawn : BaseFigure, IFigure
+    public class King: BaseFigure, IFigure
     {
-        public Pawn(ChessColor color) : base(color)
+        public King(ChessColor color) : base(color)
         {
 
         }
-      
     }
 }

@@ -1,4 +1,6 @@
-﻿using ChessGame.Players;
+﻿using ChessGame.Board;
+using ChessGame.Engine.Init;
+using ChessGame.Players;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,12 +9,14 @@ namespace ChessGame.Engine
 {
     public class StandartTwoPlayerEngine : IEngine
     {
-        public IEnumerable<IPlayer> Players => throw new NotImplementedException();
+        private readonly IList<IPlayer> players;
+        private readonly IBoard board;
 
-        public void Initialize()
+        public void Initialize(IInitStrategy strategy)
         {
-            throw new NotImplementedException();
+            strategy.Initialize(this.players, this.board);
         }
+
 
         public void Start()
         {
@@ -22,6 +26,16 @@ namespace ChessGame.Engine
         public void WinningConditions()
         {
             throw new NotImplementedException();
+        }
+
+
+
+        public IEnumerable<IPlayer> Players
+        {
+            get
+            {
+                return new List<IPlayer>(this.players);
+            }
         }
     }
 }
