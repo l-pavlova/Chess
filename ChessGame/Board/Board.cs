@@ -53,5 +53,24 @@ namespace ChessGame.Board
             int arrayCol = GetArrayCol(position.Col);
             this.board[arrayRow, arrayCol] = null;
         }
+        public IFigure GetFigureAtPosition(Position position)
+        {
+            int arrRow = GetArrayRow(position.Row);
+            int arrCol = GetArrayCol(position.Col);
+            return this.board[arrRow, arrCol];
+        }
+
+        public void MoveFigureAtPosition(IFigure figure, Position from, Position to)
+        {
+            int arrFromRow = GetArrayRow(from.Row);
+            int arrFromCol =GetArrayCol(from.Col);
+            this.board[arrFromRow, arrFromCol] = null;
+
+            int arrToRow = GetArrayRow(to.Row);
+            int arrToCol =GetArrayCol(to.Col);
+            this.board[arrToRow, arrToCol] = figure;
+        }
+
+       
     }
 }

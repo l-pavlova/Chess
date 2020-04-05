@@ -8,7 +8,7 @@ namespace ChessGame.Engine
 {
     public interface IEngine
     {
-        public IEnumerable<IPlayer> Players { get; }
+        public IList<IPlayer> Players { get; }
         void Initialize(IInitStrategy strategy);
 
         void Start();

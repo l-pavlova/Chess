@@ -10,7 +10,7 @@ namespace ChessGame.Engine.Init
 {
     public class StartInitializationStrategy : IInitStrategy
     {
-        private const int NUM_PLAYERS = 2;
+       
         private const int BOARD_SIZE = 8;
         private IList<Type> figureTypes;
         public StartInitializationStrategy()
@@ -61,7 +61,7 @@ namespace ChessGame.Engine.Init
         }
         private void ValidateStrategy(ICollection<IPlayer> players, IBoard board)
         {
-            if (players.Count != NUM_PLAYERS)
+            if (players.Count != Globals.NUM_PLAYERS)
             {
                 throw new InvalidOperationException("This strategy must have two players");
             }

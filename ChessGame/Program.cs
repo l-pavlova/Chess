@@ -1,4 +1,5 @@
-﻿using ChessGame.Renderers;
+﻿using ChessGame.InputProviders;
+using ChessGame.Renderers;
 using System;
 
 namespace ChessGame
@@ -9,6 +10,8 @@ namespace ChessGame
         {
             IRenderer renderer = new ConsoleRenderer();
             renderer.RenderMainMenu();
+
+            IInputProvider provider = new ConsoleInputProvider();
             Console.ReadLine();
             
         }

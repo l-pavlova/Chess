@@ -1,4 +1,5 @@
 ﻿using ChessGame.Board;
+using ChessGame.Common;
 using ChessGame.Engine.Init;
 using ChessGame.InputProviders;
 using ChessGame.Players;
@@ -11,7 +12,7 @@ namespace ChessGame.Engine
 {
     public class StandartTwoPlayerEngine : IEngine
     {
-        private readonly IList<IPlayer> players;
+        private IList<IPlayer> players;
         private readonly IBoard board;
         private readonly IRenderer renderer;
         private readonly IInputProvider input;
@@ -19,12 +20,14 @@ namespace ChessGame.Engine
         {
             this.renderer = renderer;
             this.board = board;
-            this.input = provider; 
+            this.input = provider;
         }
 
         public void Initialize(IInitStrategy strategy)
         {
-            strategy.Initialize(this.players, this.board);
+
+            Players = input.GetPlayers(Globals.NUM_PLAYERS);
+            strategy.Initialize(Players, this.board);
         }
 
 
@@ -40,12 +43,18 @@ namespace ChessGame.Engine
 
 
 
-        public IEnumerable<IPlayer> Players
+        public IList<IPlayer> Players
         {
             get
             {
                 return new List<IPlayer>(this.players);
             }
+            set
+            {
+                //todo::
+            }
+          
+        
         }
     }
 }
