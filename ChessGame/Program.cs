@@ -1,4 +1,6 @@
-﻿using ChessGame.InputProviders;
+﻿using ChessGame.Engine;
+using ChessGame.Engine.Init;
+using ChessGame.InputProviders;
 using ChessGame.Renderers;
 using System;
 
@@ -6,14 +8,24 @@ namespace ChessGame
 {
     class Program
     {
+
+
+
         static void Main()
         {
-            IRenderer renderer = new ConsoleRenderer();
-            renderer.RenderMainMenu();
+            var renderer = new ConsoleRenderer();
 
-            IInputProvider provider = new ConsoleInputProvider();
+            var inputProvider = new ConsoleInputProvider();
+
+            var chessEngine = new StandartTwoPlayerEngine(renderer, inputProvider);
+
+            var gameInitializationStrategy = new StartInitializationStrategy();
+
+            chessEngine.Initialize(gameInitializationStrategy);
+            chessEngine.Start();
+
             Console.ReadLine();
-            
+
         }
     }
 }
