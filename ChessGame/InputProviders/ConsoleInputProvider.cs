@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ChessGame.InputProviders
 {
-    public class ConsoleInputProvider :IInputProvider
+    public class ConsoleInputProvider : IInputProvider
     {
         private const string PlayerNameText = "Enter Player {0} name: ";
 
@@ -20,7 +20,7 @@ namespace ChessGame.InputProviders
                 ConsoleHelpers.SetCursorAtCenter(PlayerNameText.Length);
                 Console.Write(string.Format(PlayerNameText, i));
                 string name = Console.ReadLine();
-                var player = new Player((ChessColor)(i - 1),name );
+                var player = new Player((ChessColor)(i - 1), name);
                 players.Add(player);
             }
 

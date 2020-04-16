@@ -45,7 +45,7 @@ namespace ChessGame.Engine.Init
             {
                 var pawn = new Pawn(player.Color);
                 player.AddFigure(pawn);
-                board.AddFigure(pawn, new Position(7, (char)(i + 'a')));
+                board.AddFigure(pawn, new Position(chessRow, (char)(i + 'a')));
             }
         }
         private void AddArmyToBoardRow(IPlayer player, IBoard board, int chessRow)

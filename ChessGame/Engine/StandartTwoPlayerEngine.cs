@@ -1,5 +1,4 @@
-﻿
-using ChessGame.Board;
+﻿using ChessGame.Board;
 using ChessGame.Common;
 using ChessGame.Engine.Init;
 using ChessGame.Figures;
@@ -112,8 +111,8 @@ namespace ChessGame.Engine
         {
             this.players = new List<IPlayer>
             {
-                new Player(ChessColor.Black, "Player one" ),
-                new Player(ChessColor.White, "Player two")
+                new Player(ChessColor.Black, "Player two" ),
+                new Player(ChessColor.White, "Player one")
             };
 
             SetFirstPlayerIndex();
