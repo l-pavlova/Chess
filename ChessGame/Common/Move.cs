@@ -4,6 +4,9 @@ using System.Text;
 
 namespace ChessGame.Common
 {
+    /// <summary>
+    /// Base for movements of figures
+    /// </summary>
     public struct Move
     {
         public Move(Position from, Position to)

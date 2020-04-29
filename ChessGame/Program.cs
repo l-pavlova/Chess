@@ -8,9 +8,6 @@ namespace ChessGame
 {
     class Program
     {
-
-
-
         static void Main()
         {
             var renderer = new ConsoleRenderer();

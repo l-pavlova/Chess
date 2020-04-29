@@ -8,6 +8,9 @@ using System.Text;
 
 namespace ChessGame.Engine.Init
 {
+    /// <summary>
+    /// Standart initialization strategy to begin game
+    /// </summary>
     public class StartInitializationStrategy : IInitStrategy
     {
        

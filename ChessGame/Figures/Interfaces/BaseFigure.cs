@@ -7,6 +7,9 @@ using System.Text;
 
 namespace ChessGame.Figures.Interfaces
 {
+    /// <summary>
+    /// Base figure for all figures, all inherit basefigure and implement IFigure
+    /// </summary>
     public abstract class BaseFigure : IFigure
     {
         protected BaseFigure(ChessColor color)
